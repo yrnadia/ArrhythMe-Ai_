@@ -31,90 +31,90 @@
     }
   </style>
  </head>
- <body class="min-h-screen flex flex-col bg-gradient-to-br from-red-50 via-white to-red-50 bg-opacity-90 backdrop-blur-sm">
+ <body class="min-h-screen flex flex-col bg-white bg-opacity-90 backdrop-blur-sm">
   <!-- Container -->
   <div class="flex-grow flex flex-col max-w-7xl mx-auto p-4 sm:p-6 md:p-10 relative" id="app">
-   <!-- Decorative top wave image -->
-   <img alt="Decorative red wave banner with smooth curves and gradient from dark red to light red" class="absolute top-0 left-0 w-full h-36 object-cover pointer-events-none select-none -z-10 rounded-b-3xl" height="150" src="https://storage.googleapis.com/a1aa/image/4930bae2-d807-4fbc-347a-b3c124561f64.jpg" width="1200"/>
+   <!-- Background Image -->
+   <img alt="Background image showing a heart monitor and medical theme in red and white colors, softly blurred behind content" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" height="1080" src="Background.jpeg" width="1920"/>
    <!-- Logo and Header -->
-   <header class="flex flex-col md:flex-row items-center justify-between mb-10 border-b border-red-300 pb-6" role="banner">
+   <header class="flex flex-col md:flex-row items-center justify-between mb-8 border-b border-red-300 pb-4 relative z-10" role="banner">
     <div class="flex items-center space-x-4">
-     <img alt="Logo persegi panjang ArrhythME-AI milik pengguna" class="w-40 h-20 rounded-lg shadow-lg object-contain" height="160" id="logo" src="https://storage.googleapis.com/a1aa/image/b1581e2f-4da0-4ecb-4304-6ac39480c91e.jpg" width="360"/>
-     <h1 class="text-4xl font-extrabold text-red-700 select-none tracking-wide drop-shadow-md">
+     <img alt="Logo persegi panjang ArrhythME-AI milik pengguna" class="w-36 h-16 rounded-md shadow-md object-contain" height="160" id="logo" src="LOGO.png" width="360"/>
+     <h1 class="text-3xl font-extrabold text-red-700 select-none tracking-tight">
       ArrhythME-AI
      </h1>
     </div>
-    <nav aria-label="Primary navigation" class="space-x-6 mt-4 md:mt-0 flex justify-center md:justify-end w-full md:w-auto">
-     <button class="text-red-700 font-semibold hover:text-red-900 transition text-lg px-4 py-2 rounded-lg border-2 border-red-700 hover:border-red-900 shadow-md" id="nav-login-btn" type="button">
+    <nav aria-label="Primary navigation" class="space-x-4 mt-4 md:mt-0 flex justify-center md:justify-end w-full md:w-auto relative z-10">
+     <button class="text-red-700 font-semibold hover:text-red-900 transition rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="nav-login-btn" type="button">
       Login
      </button>
-     <button class="text-red-700 font-semibold hover:text-red-900 transition text-lg px-4 py-2 rounded-lg border-2 border-red-700 hover:border-red-900 shadow-md" id="nav-register-btn" type="button">
+     <button class="text-red-700 font-semibold hover:text-red-900 transition rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="nav-register-btn" type="button">
       Register
      </button>
     </nav>
    </header>
    <!-- Main Content Area -->
-   <main class="flex-grow bg-white bg-opacity-95 rounded-3xl shadow-2xl p-8 md:p-14 max-w-5xl mx-auto w-full relative z-10" role="main">
+   <main class="flex-grow bg-white bg-opacity-95 rounded-xl shadow-lg p-6 md:p-10 max-w-5xl mx-auto w-full relative z-10" role="main">
     <!-- AUTH SECTION -->
     <section aria-label="Authentication section" class="max-w-md mx-auto" id="auth-section">
      <!-- Tabs -->
-     <div class="flex justify-center mb-8 border-b-4 border-red-700" role="tablist">
-      <button aria-controls="login-form" aria-selected="true" class="px-8 py-3 font-semibold text-red-700 border-b-4 border-red-700 focus:outline-none text-xl transition" id="tab-login" role="tab" tabindex="0" type="button">
+     <div class="flex justify-center mb-6 border-b border-red-300" role="tablist">
+      <button aria-controls="login-form" aria-selected="true" class="px-6 py-2 font-semibold text-red-700 border-b-2 border-red-700 focus:outline-none transition" id="tab-login" role="tab" tabindex="0" type="button">
        Login
       </button>
-      <button aria-controls="register-form" aria-selected="false" class="px-8 py-3 font-semibold text-gray-400 hover:text-red-700 focus:outline-none text-xl transition" id="tab-register" role="tab" tabindex="-1" type="button">
+      <button aria-controls="register-form" aria-selected="false" class="px-6 py-2 font-semibold text-gray-500 hover:text-red-700 focus:outline-none transition" id="tab-register" role="tab" tabindex="-1" type="button">
        Register
       </button>
      </div>
      <!-- Login Form -->
-     <form aria-label="Login form" autocomplete="off" class="space-y-8" id="login-form" novalidate="">
+     <form aria-label="Login form" autocomplete="off" class="space-y-6" id="login-form" novalidate="">
       <div>
-       <label class="block text-lg font-medium text-gray-700 mb-2" for="login-username-email">
+       <label class="block text-sm font-medium text-gray-700" for="login-username-email">
         Username atau Email
        </label>
-       <input autocomplete="username" class="mt-1 block w-full rounded-xl border-2 border-gray-300 px-4 py-3 shadow-md placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50 text-lg transition" id="login-username-email" name="login-username-email" placeholder="Masukkan username atau email" required="" type="text"/>
+       <input autocomplete="username" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="login-username-email" name="login-username-email" placeholder="Masukkan username atau email" required="" type="text"/>
       </div>
       <div>
-       <label class="block text-lg font-medium text-gray-700 mb-2" for="login-password">
+       <label class="block text-sm font-medium text-gray-700" for="login-password">
         Password
        </label>
-       <input autocomplete="current-password" class="mt-1 block w-full rounded-xl border-2 border-gray-300 px-4 py-3 shadow-md placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50 text-lg transition" id="login-password" name="login-password" placeholder="Masukkan password" required="" type="password"/>
+       <input autocomplete="current-password" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="login-password" name="login-password" placeholder="Masukkan password" required="" type="password"/>
       </div>
-      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-3 rounded-xl shadow-lg transition text-xl" type="submit">
+      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
        Masuk
       </button>
      </form>
      <!-- Register Form -->
-     <form aria-label="Register form" autocomplete="off" class="space-y-8 hidden" id="register-form" novalidate="">
+     <form aria-label="Register form" autocomplete="off" class="space-y-6 hidden" id="register-form" novalidate="">
       <div>
-       <label class="block text-lg font-medium text-gray-700 mb-2" for="register-fullname">
+       <label class="block text-sm font-medium text-gray-700" for="register-fullname">
         Nama Lengkap
        </label>
-       <input autocomplete="name" class="mt-1 block w-full rounded-xl border-2 border-gray-300 px-4 py-3 shadow-md placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50 text-lg transition" id="register-fullname" name="register-fullname" placeholder="Masukkan nama lengkap" required="" type="text"/>
+       <input autocomplete="name" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="register-fullname" name="register-fullname" placeholder="Masukkan nama lengkap" required="" type="text"/>
       </div>
       <div>
-       <label class="block text-lg font-medium text-gray-700 mb-2" for="register-username">
+       <label class="block text-sm font-medium text-gray-700" for="register-username">
         Username
        </label>
-       <input autocomplete="username" class="mt-1 block w-full rounded-xl border-2 border-gray-300 px-4 py-3 shadow-md placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50 text-lg transition" id="register-username" name="register-username" placeholder="Buat username" required="" type="text"/>
+       <input autocomplete="username" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="register-username" name="register-username" placeholder="Buat username" required="" type="text"/>
       </div>
       <div>
-       <label class="block text-lg font-medium text-gray-700 mb-2" for="register-email">
+       <label class="block text-sm font-medium text-gray-700" for="register-email">
         Email
        </label>
-       <input autocomplete="email" class="mt-1 block w-full rounded-xl border-2 border-gray-300 px-4 py-3 shadow-md placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50 text-lg transition" id="register-email" name="register-email" placeholder="Masukkan email" required="" type="email"/>
+       <input autocomplete="email" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="register-email" name="register-email" placeholder="Masukkan email" required="" type="email"/>
       </div>
       <div>
-       <label class="block text-lg font-medium text-gray-700 mb-2" for="register-password">
+       <label class="block text-sm font-medium text-gray-700" for="register-password">
         Password
        </label>
-       <input autocomplete="new-password" class="mt-1 block w-full rounded-xl border-2 border-gray-300 px-4 py-3 shadow-md placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50 text-lg transition" id="register-password" name="register-password" placeholder="Buat password" required="" type="password"/>
+       <input autocomplete="new-password" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="register-password" name="register-password" placeholder="Buat password" required="" type="password"/>
       </div>
       <div>
-       <label class="block text-lg font-medium text-gray-700 mb-2" for="register-role">
+       <label class="block text-sm font-medium text-gray-700" for="register-role">
         Daftar sebagai
        </label>
-       <select class="mt-1 block w-full rounded-xl border-2 border-gray-300 px-4 py-3 shadow-md focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50 text-lg transition" id="register-role" name="register-role" required="">
+       <select class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="register-role" name="register-role" required="">
         <option disabled="" selected="" value="">
          Pilih peran
         </option>
@@ -126,7 +126,7 @@
         </option>
        </select>
       </div>
-      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-3 rounded-xl shadow-lg transition text-xl" type="submit">
+      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
        Daftar
       </button>
      </form>
@@ -134,16 +134,16 @@
     <!-- DASHBOARD SECTION -->
     <section aria-label="Dashboard section" class="hidden max-w-7xl mx-auto flex flex-col" id="dashboard-section">
      <!-- Dashboard Header -->
-     <nav aria-label="Dashboard navigation" class="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-red-700 via-red-800 to-red-900 text-white rounded-t-3xl px-8 py-5 shadow-lg" id="dashboard-nav" role="navigation">
-      <div class="flex items-center space-x-6">
-       <img alt="Logo persegi panjang ArrhythME-AI milik pengguna" class="w-32 h-14 rounded-lg object-contain shadow-lg" height="120" src="https://storage.googleapis.com/a1aa/image/b1581e2f-4da0-4ecb-4304-6ac39480c91e.jpg" width="280"/>
-       <h2 class="text-3xl font-extrabold tracking-wide drop-shadow-lg" id="dashboard-title">
+     <nav aria-label="Dashboard navigation" class="flex flex-col md:flex-row items-center justify-between bg-red-700 text-white rounded-t-xl px-6 py-4 shadow-md" id="dashboard-nav" role="navigation">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Logo persegi panjang ArrhythME-AI milik pengguna" class="w-28 h-12 rounded-md object-contain" height="120" src="LOGO.png" width="280"/>
+       <h2 class="text-xl font-bold" id="dashboard-title">
         Dashboard
        </h2>
       </div>
-      <div class="flex items-center space-x-6 mt-4 md:mt-0">
-       <button class="flex items-center space-x-3 bg-white text-red-700 font-semibold px-5 py-2 rounded-2xl hover:bg-red-100 shadow-lg transition text-lg" id="dashboard-logout-btn" type="button">
-        <i class="fas fa-sign-out-alt text-xl">
+      <div class="flex items-center space-x-4">
+       <button class="flex items-center space-x-2 bg-white text-red-700 font-semibold px-4 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="dashboard-logout-btn" type="button">
+        <i class="fas fa-sign-out-alt">
         </i>
         <span>
          Logout
@@ -152,62 +152,62 @@
       </div>
      </nav>
      <!-- Dashboard Content -->
-     <div class="bg-red-50 rounded-b-3xl shadow-2xl p-8 grid grid-cols-1 md:grid-cols-5 gap-8 min-h-[700px]" id="dashboard-content">
+     <div class="bg-white rounded-b-xl shadow-lg p-6 grid grid-cols-1 md:grid-cols-5 gap-6 min-h-[700px]" id="dashboard-content">
       <!-- Sidebar -->
-      <aside aria-label="Dashboard sidebar" class="col-span-1 bg-white rounded-2xl p-6 flex flex-col space-y-6 shadow-lg border border-red-300" id="dashboard-sidebar">
-       <div class="flex flex-col items-center space-y-4 mb-8">
-        <img alt="Foto profil pengguna" class="w-28 h-28 rounded-full border-8 border-red-700 object-cover shadow-md" height="96" id="profile-photo" src="https://storage.googleapis.com/a1aa/image/ef35b9f6-3a61-45d8-4eb3-4dc5d70572de.jpg" width="96"/>
-        <h3 class="text-xl font-bold text-red-700 text-center break-words drop-shadow-sm" id="profile-name">
+      <aside aria-label="Dashboard sidebar" class="col-span-1 bg-red-50 rounded-lg p-4 flex flex-col space-y-4 sticky top-6 max-h-[calc(100vh-4rem)] overflow-y-auto" id="dashboard-sidebar">
+       <div class="flex flex-col items-center space-y-3 mb-6">
+        <img alt="Foto profil pengguna" class="w-24 h-24 rounded-full border-4 border-red-700 object-cover" height="96" id="profile-photo" src="https://storage.googleapis.com/a1aa/image/53e57507-0ff1-4556-9f8b-8344f6b9e4a3.jpg" width="96"/>
+        <h3 class="text-lg font-semibold text-red-700 text-center break-words" id="profile-name">
          Nama Pengguna
         </h3>
-        <p class="text-sm text-red-600 font-semibold uppercase tracking-widest bg-red-100 px-3 py-1 rounded-full shadow-inner" id="profile-role">
+        <p class="text-sm text-red-600 font-medium uppercase tracking-wide" id="profile-role">
          Role
         </p>
        </div>
-       <nav aria-label="Dashboard main navigation" class="flex flex-col space-y-4 text-red-700 font-semibold text-lg">
-        <button class="dashboard-nav-btn flex items-center space-x-4 px-4 py-3 rounded-2xl hover:bg-red-100 transition shadow-sm" data-target="dashboard-welcome" type="button">
+       <nav aria-label="Dashboard main navigation" class="flex flex-col space-y-3 text-red-700 font-semibold">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="dashboard-welcome" type="button">
          <i class="fas fa-home fa-lg">
          </i>
          <span>
           Dashboard
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-4 px-4 py-3 rounded-2xl hover:bg-red-100 transition shadow-sm" data-target="profile-section" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="profile-section" type="button">
          <i class="fas fa-user-circle fa-lg">
          </i>
          <span>
           Profil
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-4 px-4 py-3 rounded-2xl hover:bg-red-100 transition shadow-sm" data-target="heart-section" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="heart-section" type="button">
          <i class="fas fa-heartbeat fa-lg">
          </i>
          <span>
           Heart Monitor
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-4 px-4 py-3 rounded-2xl hover:bg-red-100 transition shadow-sm" data-target="chat-section" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="chat-section" type="button">
          <i class="fas fa-comments fa-lg">
          </i>
          <span>
           Live Chat
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-4 px-4 py-3 rounded-2xl hover:bg-red-100 transition shadow-sm" data-target="education-section" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="education-section" type="button">
          <i class="fas fa-book-medical fa-lg">
          </i>
          <span>
           Edukasi
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-4 px-4 py-3 rounded-2xl hover:bg-red-100 transition shadow-sm hidden" data-target="patients-section" id="sidebar-patients-btn" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition hidden focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="patients-section" id="sidebar-patients-btn" type="button">
          <i class="fas fa-users fa-lg">
          </i>
          <span>
           Pasien
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-4 px-4 py-3 rounded-2xl hover:bg-red-100 transition shadow-sm hidden" data-target="notifications-section" id="sidebar-notifications-btn" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition hidden focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="notifications-section" id="sidebar-notifications-btn" type="button">
          <i class="fas fa-bell fa-lg">
          </i>
          <span>
@@ -217,32 +217,32 @@
        </nav>
       </aside>
       <!-- Main Content -->
-      <section class="col-span-4 bg-white rounded-2xl p-8 overflow-auto max-h-[700px] flex flex-col shadow-lg border border-red-300" id="dashboard-main">
+      <section class="col-span-4 bg-red-50 rounded-lg p-6 overflow-auto max-h-[700px] flex flex-col" id="dashboard-main">
        <!-- Welcome Dashboard (for patient and doctor) -->
-       <section aria-label="Welcome dashboard" class="hidden space-y-8" id="dashboard-welcome">
-        <h3 class="text-4xl font-extrabold text-red-700 mb-4 flex items-center space-x-4 drop-shadow-md" id="welcome-title">
-         <i class="fas fa-smile-beam text-red-700 text-4xl">
+       <section aria-label="Welcome dashboard" class="hidden space-y-6" id="dashboard-welcome">
+        <h3 class="text-3xl font-bold text-red-700 mb-2 flex items-center space-x-3">
+         <i class="fas fa-smile-beam text-red-700">
          </i>
-         <span>
+         <span id="welcome-title">
           Selamat datang
          </span>
         </h3>
-        <p class="text-xl text-gray-700 flex items-center space-x-4 max-w-3xl leading-relaxed">
-         <i class="fas fa-heartbeat text-red-700 text-4xl">
+        <p class="text-lg text-gray-700 flex items-center space-x-3">
+         <i class="fas fa-heartbeat text-red-700 text-2xl">
          </i>
          <span id="welcome-message">
           Ada yang bisa saya bantu?
          </span>
         </p>
-        <div class="hidden bg-red-100 border border-red-400 rounded-2xl p-6 shadow-lg space-y-4 max-w-md" id="patient-notifications">
-         <h4 class="text-2xl font-bold text-red-700 flex items-center space-x-3 drop-shadow-sm">
+        <div class="hidden bg-white border border-red-300 rounded-md p-4 shadow space-y-3 max-w-md" id="patient-notifications">
+         <h4 class="text-xl font-semibold text-red-700 flex items-center space-x-2">
           <i class="fas fa-bell">
           </i>
           <span>
            Notifikasi
           </span>
          </h4>
-         <ul class="list-disc list-inside text-gray-700 max-h-56 overflow-y-auto text-lg" id="patient-notifications-list" role="list">
+         <ul class="list-disc list-inside text-gray-700 max-h-48 overflow-y-auto" id="patient-notifications-list" role="list">
           <li>
            Belum ada notifikasi.
           </li>
@@ -250,207 +250,199 @@
         </div>
        </section>
        <!-- Profile Section -->
-       <section aria-label="Profile section" class="hidden space-y-8 overflow-y-auto" id="profile-section">
-        <h3 class="text-3xl font-extrabold text-red-700 mb-6 flex items-center space-x-4 drop-shadow-md">
-         <i class="fas fa-user-circle text-red-700 text-3xl">
+       <section aria-label="Profile section" class="hidden space-y-6 overflow-y-auto" id="profile-section">
+        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center space-x-3">
+         <i class="fas fa-user-circle">
          </i>
          <span>
           Profil Saya
          </span>
         </h3>
         <!-- Patient Profile Form -->
-        <form class="space-y-6 max-w-4xl" id="profile-form" novalidate="">
-         <div class="flex flex-col md:flex-row md:space-x-8">
-          <div class="flex-shrink-0 mb-6 md:mb-0 relative group">
-           <img alt="Foto profil pengguna" class="w-36 h-36 rounded-full border-8 border-red-700 object-cover shadow-lg" height="128" id="profile-photo-form" src="https://storage.googleapis.com/a1aa/image/ef35b9f6-3a61-45d8-4eb3-4dc5d70572de.jpg" width="128"/>
-           <div class="absolute inset-0 bg-red-700 bg-opacity-60 rounded-full opacity-0 group-hover:opacity-100 transition flex items-center justify-center cursor-pointer" title="Ubah Foto Profil">
-            <i class="fas fa-camera text-white text-3xl">
-            </i>
-           </div>
+        <form class="space-y-4 max-w-3xl" id="profile-form" novalidate="">
+         <div class="flex flex-col md:flex-row md:space-x-6">
+          <div class="flex-shrink-0 mb-4 md:mb-0">
+           <img alt="Foto profil pengguna" class="w-32 h-32 rounded-full border-4 border-red-700 object-cover" height="128" id="profile-photo-form" src="https://storage.googleapis.com/a1aa/image/53e57507-0ff1-4556-9f8b-8344f6b9e4a3.jpg" width="128"/>
           </div>
-          <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-6">
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-fullname">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-fullname">
              Nama Lengkap
             </label>
-            <input autocomplete="name" class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="profile-fullname" name="profile-fullname" placeholder="Masukkan nama lengkap" required="" type="text"/>
+            <input autocomplete="name" class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-fullname" name="profile-fullname" placeholder="Masukkan nama lengkap" required="" type="text"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-email">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-email">
              Email
             </label>
-            <input autocomplete="email" class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="profile-email" name="profile-email" placeholder="Masukkan email" required="" type="email"/>
+            <input autocomplete="email" class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-email" name="profile-email" placeholder="Masukkan email" required="" type="email"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-phone">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-phone">
              Nomor Telepon
             </label>
-            <input autocomplete="tel" class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="profile-phone" name="profile-phone" pattern="[0-9+ ]{6,20}" placeholder="Masukkan nomor telepon" type="tel"/>
+            <input autocomplete="tel" class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-phone" name="profile-phone" pattern="[0-9+ ]{6,20}" placeholder="Masukkan nomor telepon" type="tel"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-address">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-address">
              Alamat
             </label>
-            <textarea class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition resize-none" id="profile-address" name="profile-address" placeholder="Masukkan alamat lengkap" rows="3"></textarea>
+            <textarea class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-address" name="profile-address" placeholder="Masukkan alamat lengkap" rows="2"></textarea>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-birthplace">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-birthplace">
              Tempat Lahir
             </label>
-            <input class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="profile-birthplace" name="profile-birthplace" placeholder="Masukkan tempat lahir" type="text"/>
+            <input class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-birthplace" name="profile-birthplace" placeholder="Masukkan tempat lahir" type="text"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-birthdate">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-birthdate">
              Tanggal Lahir
             </label>
-            <input class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="profile-birthdate" name="profile-birthdate" type="date"/>
+            <input class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-birthdate" name="profile-birthdate" type="date"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-age">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-age">
              Usia
             </label>
-            <input class="w-full rounded-xl border-2 border-red-300 px-4 py-3 bg-red-100 cursor-not-allowed text-lg" id="profile-age" name="profile-age" placeholder="Usia otomatis" readonly="" type="number"/>
+            <input class="w-full rounded-md border border-red-300 px-3 py-2 bg-red-100 cursor-not-allowed" id="profile-age" name="profile-age" placeholder="Usia otomatis" readonly="" type="number"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-height">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-height">
              Tinggi Badan (cm)
             </label>
-            <input class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="profile-height" min="1" name="profile-height" placeholder="Masukkan tinggi badan" step="0.1" type="number"/>
+            <input class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-height" min="1" name="profile-height" placeholder="Masukkan tinggi badan" step="0.1" type="number"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-weight">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-weight">
              Berat Badan (kg)
             </label>
-            <input class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="profile-weight" min="1" name="profile-weight" placeholder="Masukkan berat badan" step="0.1" type="number"/>
+            <input class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-weight" min="1" name="profile-weight" placeholder="Masukkan berat badan" step="0.1" type="number"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-bmi">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-bmi">
              BMI
             </label>
-            <input class="w-full rounded-xl border-2 border-red-300 px-4 py-3 bg-red-100 cursor-not-allowed text-lg" id="profile-bmi" name="profile-bmi" placeholder="BMI otomatis" readonly="" type="text"/>
+            <input class="w-full rounded-md border border-red-300 px-3 py-2 bg-red-100 cursor-not-allowed" id="profile-bmi" name="profile-bmi" placeholder="BMI otomatis" readonly="" type="text"/>
            </div>
            <div class="md:col-span-2">
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="profile-medical-history">
+            <label class="block font-semibold text-red-700 mb-1" for="profile-medical-history">
              Riwayat Penyakit
             </label>
-            <textarea class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition resize-none" id="profile-medical-history" name="profile-medical-history" placeholder="Masukkan riwayat penyakit jika ada" rows="4"></textarea>
+            <textarea class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="profile-medical-history" name="profile-medical-history" placeholder="Masukkan riwayat penyakit jika ada" rows="3"></textarea>
            </div>
           </div>
          </div>
-         <div class="flex justify-end mt-6">
-          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-8 py-3 rounded-3xl shadow-lg transition text-xl" type="submit">
+         <div class="flex justify-end">
+          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
            Simpan Profil
           </button>
          </div>
         </form>
         <!-- Doctor Profile Form -->
-        <form class="space-y-6 max-w-4xl hidden" id="profile-form-doctor" novalidate="">
-         <div class="flex flex-col md:flex-row md:space-x-8">
-          <div class="flex-shrink-0 mb-6 md:mb-0 relative group">
-           <img alt="Foto profil dokter" class="w-36 h-36 rounded-full border-8 border-red-700 object-cover shadow-lg" height="128" id="profile-photo-form-doctor" src="https://storage.googleapis.com/a1aa/image/201311cf-aa97-403b-ae1d-6b37045d63f1.jpg" width="128"/>
-           <div class="absolute inset-0 bg-red-700 bg-opacity-60 rounded-full opacity-0 group-hover:opacity-100 transition flex items-center justify-center cursor-pointer" title="Ubah Foto Profil">
-            <i class="fas fa-camera text-white text-3xl">
-            </i>
-           </div>
+        <form class="space-y-4 max-w-3xl hidden" id="profile-form-doctor" novalidate="">
+         <div class="flex flex-col md:flex-row md:space-x-6">
+          <div class="flex-shrink-0 mb-4 md:mb-0">
+           <img alt="Foto profil dokter" class="w-32 h-32 rounded-full border-4 border-red-700 object-cover" height="128" id="profile-photo-form-doctor" src="https://storage.googleapis.com/a1aa/image/f754cb9e-a8c0-471d-3579-dd846000b6ce.jpg" width="128"/>
           </div>
-          <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-6">
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="doctor-fullname">
+            <label class="block font-semibold text-red-700 mb-1" for="doctor-fullname">
              Nama Lengkap
             </label>
-            <input autocomplete="name" class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="doctor-fullname" name="doctor-fullname" placeholder="Masukkan nama lengkap" required="" type="text"/>
+            <input autocomplete="name" class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="doctor-fullname" name="doctor-fullname" placeholder="Masukkan nama lengkap" required="" type="text"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="doctor-specialist">
+            <label class="block font-semibold text-red-700 mb-1" for="doctor-specialist">
              Spesialis
             </label>
-            <input class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="doctor-specialist" name="doctor-specialist" placeholder="Masukkan spesialisasi" required="" type="text"/>
+            <input class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="doctor-specialist" name="doctor-specialist" placeholder="Masukkan spesialisasi" required="" type="text"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="doctor-phone">
+            <label class="block font-semibold text-red-700 mb-1" for="doctor-phone">
              Nomor Telepon
             </label>
-            <input autocomplete="tel" class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="doctor-phone" name="doctor-phone" pattern="[0-9+ ]{6,20}" placeholder="Masukkan nomor telepon" type="tel"/>
+            <input autocomplete="tel" class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="doctor-phone" name="doctor-phone" pattern="[0-9+ ]{6,20}" placeholder="Masukkan nomor telepon" type="tel"/>
            </div>
            <div>
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="doctor-email">
+            <label class="block font-semibold text-red-700 mb-1" for="doctor-email">
              Email
             </label>
-            <input autocomplete="email" class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="doctor-email" name="doctor-email" placeholder="Masukkan email" required="" type="email"/>
+            <input autocomplete="email" class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="doctor-email" name="doctor-email" placeholder="Masukkan email" required="" type="email"/>
            </div>
            <div class="md:col-span-2">
-            <label class="block font-semibold text-red-700 mb-2 text-lg" for="doctor-address">
+            <label class="block font-semibold text-red-700 mb-1" for="doctor-address">
              Alamat Praktik
             </label>
-            <textarea class="w-full rounded-xl border-2 border-red-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition resize-none" id="doctor-address" name="doctor-address" placeholder="Masukkan alamat praktik" rows="3"></textarea>
+            <textarea class="w-full rounded-md border border-red-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="doctor-address" name="doctor-address" placeholder="Masukkan alamat praktik" rows="2"></textarea>
            </div>
           </div>
          </div>
-         <div class="flex justify-end mt-6">
-          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-8 py-3 rounded-3xl shadow-lg transition text-xl" type="submit">
+         <div class="flex justify-end">
+          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
            Simpan Profil
           </button>
          </div>
         </form>
        </section>
        <!-- Heart Monitor Section -->
-       <section aria-label="Heart monitor section" class="hidden space-y-8 max-w-4xl" id="heart-section">
-        <h3 class="text-3xl font-extrabold text-red-700 mb-6 flex items-center space-x-4 drop-shadow-md">
-         <i class="fas fa-heartbeat text-red-700 text-3xl">
+       <section aria-label="Heart monitor section" class="hidden space-y-6 max-w-3xl" id="heart-section">
+        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center space-x-3">
+         <i class="fas fa-heartbeat">
          </i>
          <span>
           Heart Monitor
          </span>
         </h3>
-        <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-red-300 flex flex-col space-y-6">
-         <p class="text-gray-700 text-lg max-w-3xl leading-relaxed">
+        <div class="bg-white rounded-lg shadow p-6 border border-red-300 flex flex-col space-y-4">
+         <p class="text-gray-700">
           Tekan tombol
-          <span class="font-semibold text-red-700">
+          <span class="font-semibold">
            Mulai
           </span>
           untuk memulai
-          pengambilan sinyal ECG selama 30 detik.
+                  pengambilan sinyal ECG selama 30 detik.
          </p>
-         <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-8 py-3 rounded-3xl transition flex items-center space-x-4 self-start shadow-lg text-xl" id="start-ecg-btn" type="button">
+         <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition flex items-center space-x-2 self-start focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="start-ecg-btn" type="button">
           <i class="fas fa-play">
           </i>
           <span>
            Mulai
           </span>
          </button>
-         <div aria-live="polite" class="mt-8 space-y-6 hidden" id="ecg-result">
-          <div class="flex flex-wrap gap-8 justify-center">
-           <div class="flex items-center space-x-4 bg-red-50 rounded-2xl p-6 shadow-lg w-64">
-            <i class="fas fa-tachometer-alt fa-4x text-red-700">
+         <div aria-live="polite" class="mt-6 space-y-3 hidden" id="ecg-result">
+          <div class="flex flex-wrap gap-6">
+           <div class="flex items-center space-x-2 bg-red-50 rounded-md p-4 shadow w-full sm:w-auto">
+            <i class="fas fa-tachometer-alt fa-3x text-red-700">
             </i>
             <div>
-             <p class="text-lg text-gray-600 font-semibold">
+             <p class="text-sm text-gray-600">
               BPM (Detak Jantung)
              </p>
-             <p aria-label="BPM value" class="text-5xl font-extrabold text-red-700" id="bpm-value">
+             <p aria-label="BPM value" class="text-4xl font-bold text-red-700" id="bpm-value">
               --
              </p>
             </div>
            </div>
-           <div class="flex items-center space-x-4 bg-red-50 rounded-2xl p-6 shadow-lg w-64">
-            <i class="fas fa-info-circle fa-4x text-red-700">
+           <div class="flex items-center space-x-2 bg-red-50 rounded-md p-4 shadow w-full sm:w-auto">
+            <i class="fas fa-info-circle fa-3x text-red-700">
             </i>
             <div>
-             <p class="text-lg text-gray-600 font-semibold">
+             <p class="text-sm text-gray-600">
               Kategori
              </p>
-             <p aria-label="BPM category" class="text-3xl font-bold text-red-700" id="bpm-category">
+             <p aria-label="BPM category" class="text-2xl font-semibold text-red-700" id="bpm-category">
               --
              </p>
             </div>
            </div>
           </div>
           <div>
-           <h4 class="font-bold text-red-700 text-2xl mb-4">
+           <h4 class="font-semibold text-red-700 mb-2">
             Riwayat Deteksi Sebelumnya
            </h4>
-           <ul aria-label="Riwayat deteksi ECG" class="max-h-56 overflow-y-auto border-2 border-red-300 rounded-2xl p-6 space-y-4 bg-white shadow-inner text-lg" id="ecg-history-list">
-            <li class="text-gray-500 text-base">
+           <ul aria-label="Riwayat deteksi ECG" class="max-h-48 overflow-y-auto border border-red-300 rounded-md p-3 space-y-2 bg-white" id="ecg-history-list">
+            <li class="text-gray-500 text-sm">
              Belum ada riwayat deteksi.
             </li>
            </ul>
@@ -459,18 +451,18 @@
         </div>
        </section>
        <!-- Live Chat Section -->
-       <section aria-label="Live chat section" class="hidden max-w-6xl flex flex-col h-full" id="chat-section">
-        <h3 class="text-3xl font-extrabold text-red-700 mb-6 flex items-center space-x-4 drop-shadow-md">
-         <i class="fas fa-comments text-red-700 text-3xl">
+       <section aria-label="Live chat section" class="hidden max-w-5xl flex flex-col h-full" id="chat-section">
+        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center space-x-3">
+         <i class="fas fa-comments">
          </i>
          <span>
           Live Chat
          </span>
         </h3>
-        <div class="flex flex-col md:flex-row h-[520px] bg-white rounded-2xl shadow-lg border-2 border-red-300 overflow-hidden">
+        <div class="flex flex-col md:flex-row h-[500px] bg-white rounded-lg shadow border border-red-300 overflow-hidden">
          <!-- User List -->
-         <aside aria-label="Daftar pengguna chat" class="w-full md:w-1/3 border-r-2 border-red-300 overflow-y-auto bg-red-50" id="chat-user-list">
-          <div class="p-6 border-b-2 border-red-300 bg-red-100 font-bold text-red-700 text-xl tracking-wide">
+         <aside aria-label="Daftar pengguna chat" class="w-full md:w-1/3 border-r border-red-300 overflow-y-auto" id="chat-user-list">
+          <div class="p-4 border-b border-red-300 bg-red-50 font-semibold text-red-700 sticky top-0 z-10">
            Daftar Chat
           </div>
           <ul class="divide-y divide-red-200" id="chat-users" role="list">
@@ -478,28 +470,28 @@
          </aside>
          <!-- Chat Window -->
          <section aria-label="Jendela chat" class="flex flex-col w-full md:w-2/3" hidden="" id="chat-window">
-          <header class="flex items-center justify-between bg-gradient-to-r from-red-700 via-red-800 to-red-900 text-white p-6 shadow-lg" id="chat-header">
-           <div class="flex items-center space-x-5">
-            <img alt="Foto profil lawan chat" class="w-14 h-14 rounded-full object-cover border-4 border-white shadow-md" height="48" id="chat-header-photo" src="https://storage.googleapis.com/a1aa/image/956b0b1a-214f-4e2f-954f-6220fb880244.jpg" width="48"/>
+          <header class="flex items-center justify-between bg-red-700 text-white p-4" id="chat-header">
+           <div class="flex items-center space-x-3">
+            <img alt="Foto profil lawan chat" class="w-12 h-12 rounded-full object-cover border-2 border-white" height="48" id="chat-header-photo" src="https://storage.googleapis.com/a1aa/image/34625384-ac09-4662-e1e1-34e94c5e509b.jpg" width="48"/>
             <div>
-             <h4 class="font-bold text-2xl" id="chat-header-name">
+             <h4 class="font-semibold text-lg" id="chat-header-name">
               Nama Lawan Chat
              </h4>
-             <p class="text-sm opacity-90" id="chat-header-role">
+             <p class="text-sm opacity-80" id="chat-header-role">
               Role
              </p>
             </div>
            </div>
-           <button aria-label="Tutup chat" class="text-white hover:text-red-300 focus:outline-none text-3xl" id="chat-close-btn" title="Tutup Chat" type="button">
-            <i class="fas fa-times">
+           <button aria-label="Tutup chat" class="text-white hover:text-red-300 focus:outline-none" id="chat-close-btn" title="Tutup Chat" type="button">
+            <i class="fas fa-times fa-lg">
             </i>
            </button>
           </header>
-          <div aria-live="polite" aria-relevant="additions" class="flex-grow p-6 overflow-y-auto space-y-6 bg-red-50" id="chat-messages" role="log">
+          <div aria-live="polite" aria-relevant="additions" class="flex-grow p-4 overflow-y-auto space-y-4 bg-red-50" id="chat-messages" role="log">
           </div>
-          <form aria-label="Form kirim pesan" autocomplete="off" class="flex border-t-2 border-red-300 p-4 bg-white" id="chat-form" novalidate="">
-           <input aria-required="true" class="flex-grow rounded-l-2xl border-2 border-red-300 px-6 py-3 focus:outline-none focus:ring-4 focus:ring-red-400 text-lg transition" id="chat-input" placeholder="Ketik pesan..." required="" type="text"/>
-           <button aria-label="Kirim pesan" class="bg-red-700 hover:bg-red-800 text-white px-8 py-3 rounded-r-2xl transition text-xl shadow-lg" type="submit">
+          <form aria-label="Form kirim pesan" autocomplete="off" class="flex border-t border-red-300 p-3 bg-white" id="chat-form" novalidate="">
+           <input aria-required="true" class="flex-grow rounded-l-md border border-red-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="chat-input" placeholder="Ketik pesan..." required="" type="text"/>
+           <button aria-label="Kirim pesan" class="bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-r-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
             <i class="fas fa-paper-plane">
             </i>
            </button>
@@ -508,141 +500,141 @@
         </div>
        </section>
        <!-- Patients Section (Doctor only) -->
-       <section aria-label="Daftar pasien" class="hidden max-w-6xl space-y-8 overflow-auto" id="patients-section">
-        <h3 class="text-3xl font-extrabold text-red-700 mb-6 flex items-center space-x-4 drop-shadow-md">
-         <i class="fas fa-users text-red-700 text-3xl">
+       <section aria-label="Daftar pasien" class="hidden max-w-5xl space-y-6 overflow-auto" id="patients-section">
+        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center space-x-3">
+         <i class="fas fa-users">
          </i>
          <span>
           Daftar Pasien
          </span>
         </h3>
-        <div class="overflow-x-auto bg-white rounded-2xl shadow-lg border-2 border-red-300">
+        <div class="overflow-x-auto bg-white rounded-lg shadow border border-red-300">
          <table aria-label="Tabel pasien" class="min-w-full divide-y divide-red-200" role="table">
-          <thead class="bg-gradient-to-r from-red-700 via-red-800 to-red-900 text-white rounded-t-2xl">
+          <thead class="bg-red-700 text-white">
            <tr>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Nama Lengkap
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Email
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Nomor Telepon
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Jenis Kelamin
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Usia
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              BMI
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide max-w-xs" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Riwayat Penyakit
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide max-w-xs" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Alamat
             </th>
-            <th class="px-8 py-4 text-left text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-left text-sm font-semibold" scope="col">
              Status Aritmia
             </th>
-            <th class="px-8 py-4 text-center text-lg font-semibold tracking-wide" scope="col">
+            <th class="px-6 py-3 text-center text-sm font-semibold" scope="col">
              Aksi
             </th>
            </tr>
           </thead>
-          <tbody class="divide-y divide-red-200 bg-white text-lg" id="patients-table-body" role="rowgroup">
+          <tbody class="divide-y divide-red-200 bg-white" id="patients-table-body" role="rowgroup">
           </tbody>
          </table>
         </div>
        </section>
        <!-- Notifications Section (Doctor only) -->
-       <section aria-label="Notifikasi" class="hidden max-w-6xl space-y-8 overflow-auto" id="notifications-section">
-        <h3 class="text-3xl font-extrabold text-red-700 mb-6 flex items-center space-x-4 drop-shadow-md">
-         <i class="fas fa-bell text-red-700 text-3xl">
+       <section aria-label="Notifikasi" class="hidden max-w-5xl space-y-6 overflow-auto" id="notifications-section">
+        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center space-x-3">
+         <i class="fas fa-bell">
          </i>
          <span>
           Notifikasi
          </span>
         </h3>
-        <div aria-live="polite" class="bg-white rounded-2xl shadow-lg border-2 border-red-300 max-h-[520px] overflow-y-auto p-8 text-lg" id="notifications-list" role="list">
+        <div aria-live="polite" class="bg-white rounded-lg shadow border border-red-300 max-h-[500px] overflow-y-auto p-4" id="notifications-list" role="list">
          <p class="text-gray-500 text-center">
           Belum ada notifikasi.
          </p>
         </div>
        </section>
        <!-- Education Section -->
-       <section aria-label="Edukasi" class="hidden max-w-5xl space-y-8" id="education-section">
-        <h3 class="text-3xl font-extrabold text-red-700 mb-6 flex items-center space-x-4 drop-shadow-md">
-         <i class="fas fa-book-medical text-red-700 text-3xl">
+       <section aria-label="Edukasi" class="hidden max-w-4xl space-y-6" id="education-section">
+        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center space-x-3">
+         <i class="fas fa-book-medical">
          </i>
          <span>
           Edukasi
          </span>
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-         <article class="bg-white rounded-2xl shadow-lg p-6 border-2 border-red-300 hover:shadow-2xl transition cursor-pointer flex flex-col">
-          <img alt="Ilustrasi anatomi jantung manusia dengan warna merah dan putih" class="rounded-xl mb-5 object-cover w-full h-48 shadow-md" height="200" src="https://storage.googleapis.com/a1aa/image/f2b21616-5504-40ed-69b9-5445e7c8ee04.jpg" width="400"/>
-          <h4 class="text-2xl font-bold text-red-700 mb-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
+          <img alt="Ilustrasi anatomi jantung manusia dengan warna merah dan putih" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/9c48ea7d-564d-4d5b-8d9f-c21e0475f714.jpg" width="400"/>
+          <h4 class="text-lg font-semibold text-red-700 mb-1">
            Anatomi Jantung
           </h4>
-          <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+          <p class="text-gray-700 text-sm mb-2">
            Pelajari struktur dan fungsi jantung manusia secara mendalam.
           </p>
-          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-2 text-lg" href="https://www.heart.org/en/health-topics/heart-attack/about-heart-attacks/anatomy-of-the-heart" rel="noopener noreferrer" target="_blank">
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/health-topics/heart-attack/about-heart-attacks/anatomy-of-the-heart" rel="noopener noreferrer" target="_blank">
            <span>
             Baca Selengkapnya
            </span>
-           <i class="fas fa-external-link-alt text-base">
+           <i class="fas fa-external-link-alt text-sm">
            </i>
           </a>
          </article>
-         <article class="bg-white rounded-2xl shadow-lg p-6 border-2 border-red-300 hover:shadow-2xl transition cursor-pointer flex flex-col">
-          <img alt="Ilustrasi gelombang ECG dengan tanda aritmia berwarna merah" class="rounded-xl mb-5 object-cover w-full h-48 shadow-md" height="200" src="https://storage.googleapis.com/a1aa/image/bcc24551-f469-463f-78f6-b619177b1800.jpg" width="400"/>
-          <h4 class="text-2xl font-bold text-red-700 mb-3">
+         <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
+          <img alt="Ilustrasi gelombang ECG dengan tanda aritmia berwarna merah" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/fca2d1ca-ea8a-4861-a744-be7eb1e121ab.jpg" width="400"/>
+          <h4 class="text-lg font-semibold text-red-700 mb-1">
            Mengenal Aritmia
           </h4>
-          <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+          <p class="text-gray-700 text-sm mb-2">
            Informasi tentang jenis-jenis aritmia dan dampaknya pada kesehatan.
           </p>
-          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-2 text-lg" href="https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia" rel="noopener noreferrer" target="_blank">
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia" rel="noopener noreferrer" target="_blank">
            <span>
             Baca Selengkapnya
            </span>
-           <i class="fas fa-external-link-alt text-base">
+           <i class="fas fa-external-link-alt text-sm">
            </i>
           </a>
          </article>
-         <article class="bg-white rounded-2xl shadow-lg p-6 border-2 border-red-300 hover:shadow-2xl transition cursor-pointer flex flex-col">
-          <img alt="Ilustrasi makanan sehat berwarna merah dan putih di atas meja kayu" class="rounded-xl mb-5 object-cover w-full h-48 shadow-md" height="200" src="https://storage.googleapis.com/a1aa/image/b8380a0c-09d6-49c7-740c-cab9c4168c3a.jpg" width="400"/>
-          <h4 class="text-2xl font-bold text-red-700 mb-3">
+         <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
+          <img alt="Ilustrasi makanan sehat berwarna merah dan putih di atas meja kayu" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/7f3ec17f-c0f9-4fa0-5d15-163372ce022f.jpg" width="400"/>
+          <h4 class="text-lg font-semibold text-red-700 mb-1">
            Pola Makan Sehat
           </h4>
-          <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+          <p class="text-gray-700 text-sm mb-2">
            Tips dan panduan pola makan yang baik untuk kesehatan jantung.
           </p>
-          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-2 text-lg" href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/healthy-eating-for-a-healthy-heart" rel="noopener noreferrer" target="_blank">
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/healthy-eating-for-a-healthy-heart" rel="noopener noreferrer" target="_blank">
            <span>
             Baca Selengkapnya
            </span>
-           <i class="fas fa-external-link-alt text-base">
+           <i class="fas fa-external-link-alt text-sm">
            </i>
           </a>
          </article>
-         <article class="bg-white rounded-2xl shadow-lg p-6 border-2 border-red-300 hover:shadow-2xl transition cursor-pointer flex flex-col">
-          <img alt="Ilustrasi orang berolahraga dan gaya hidup sehat dengan latar belakang merah putih" class="rounded-xl mb-5 object-cover w-full h-48 shadow-md" height="200" src="https://storage.googleapis.com/a1aa/image/2d0e9a98-92b1-4da4-3670-e9c4b73bd49a.jpg" width="400"/>
-          <h4 class="text-2xl font-bold text-red-700 mb-3">
+         <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
+          <img alt="Ilustrasi orang berolahraga dan gaya hidup sehat dengan latar belakang merah putih" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/05749a1c-16b1-434f-cac0-d03006f92604.jpg" width="400"/>
+          <h4 class="text-lg font-semibold text-red-700 mb-1">
            Gaya Hidup Sehat
           </h4>
-          <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+          <p class="text-gray-700 text-sm mb-2">
            Cara menjaga pola hidup sehat untuk mencegah penyakit jantung.
           </p>
-          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-2 text-lg" href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/physical-activity-improves-quality-of-life" rel="noopener noreferrer" target="_blank">
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/physical-activity-improves-quality-of-life" rel="noopener noreferrer" target="_blank">
            <span>
             Baca Selengkapnya
            </span>
-           <i class="fas fa-external-link-alt text-base">
+           <i class="fas fa-external-link-alt text-sm">
            </i>
           </a>
          </article>
@@ -652,8 +644,6 @@
      </div>
     </section>
    </main>
-   <!-- Decorative bottom heart image -->
-   <img alt="Decorative heart shape banner with gradient red and white colors and subtle glow" class="absolute bottom-0 left-0 w-full h-36 object-cover pointer-events-none select-none -z-10 rounded-t-3xl" height="150" src="https://storage.googleapis.com/a1aa/image/1d3843cc-6889-41af-705c-7b14306656a3.jpg" width="1200"/>
   </div>
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js">
@@ -838,17 +828,17 @@
     // Authentication UI toggles
     function showLogin() {
       tabLogin.classList.add("border-red-700", "text-red-700");
-      tabLogin.classList.remove("text-gray-400");
+      tabLogin.classList.remove("text-gray-500");
       tabRegister.classList.remove("border-red-700", "text-red-700");
-      tabRegister.classList.add("text-gray-400");
+      tabRegister.classList.add("text-gray-500");
       loginForm.classList.remove("hidden");
       registerForm.classList.add("hidden");
     }
     function showRegister() {
       tabRegister.classList.add("border-red-700", "text-red-700");
-      tabRegister.classList.remove("text-gray-400");
+      tabRegister.classList.remove("text-gray-500");
       tabLogin.classList.remove("border-red-700", "text-red-700");
-      tabLogin.classList.add("text-gray-400");
+      tabLogin.classList.add("text-gray-500");
       registerForm.classList.remove("hidden");
       loginForm.classList.add("hidden");
     }
@@ -1174,7 +1164,7 @@
       ecgHistoryList.innerHTML = "";
       if (!history.length) {
         ecgHistoryList.innerHTML =
-          '<li class="text-gray-500 text-base">Belum ada riwayat deteksi.</li>';
+          '<li class="text-gray-500 text-sm">Belum ada riwayat deteksi.</li>';
         return;
       }
       history
@@ -1183,12 +1173,12 @@
         .forEach((item) => {
           const li = document.createElement("li");
           li.className =
-            "border border-red-300 rounded-2xl p-4 bg-white flex justify-between items-center shadow-md";
+            "border border-red-300 rounded-md p-2 bg-white flex justify-between items-center";
           li.innerHTML = `
             <div>
-              <p class="font-bold text-red-700 text-lg">BPM: ${item.bpm}</p>
-              <p class="text-base text-gray-700">Kategori: ${item.category}</p>
-              <p class="text-sm text-gray-500">${formatDateTime(item.timestamp)}</p>
+              <p class="font-semibold text-red-700">BPM: ${item.bpm}</p>
+              <p class="text-sm text-gray-600">Kategori: ${item.category}</p>
+              <p class="text-xs text-gray-500">${formatDateTime(item.timestamp)}</p>
             </div>
           `;
           ecgHistoryList.appendChild(li);
@@ -1298,7 +1288,7 @@
     async function loadPatientsList() {
       if (currentRole !== "doctor") return;
       patientsTableBody.innerHTML =
-        '<tr><td colspan="10" class="text-center py-12 text-gray-500 text-lg">Memuat data pasien...</td></tr>';
+        '<tr><td colspan="10" class="text-center py-6 text-gray-500">Memuat data pasien...</td></tr>';
       try {
         const patientsSnapshot = await db
           .collection("users")
@@ -1306,7 +1296,7 @@
           .get();
         if (patientsSnapshot.empty) {
           patientsTableBody.innerHTML =
-            '<tr><td colspan="10" class="text-center py-12 text-gray-500 text-lg">Belum ada pasien terdaftar.</td></tr>';
+            '<tr><td colspan="10" class="text-center py-6 text-gray-500">Belum ada pasien terdaftar.</td></tr>';
           return;
         }
         patientsTableBody.innerHTML = "";
@@ -1318,31 +1308,31 @@
               : null;
           const statusAritmia = lastEcg ? lastEcg.category : "-";
           const tr = document.createElement("tr");
-          tr.className = "hover:bg-red-50 cursor-pointer transition";
+          tr.className = "hover:bg-red-50 cursor-pointer";
           tr.innerHTML = `
-            <td class="px-8 py-4 text-base text-red-700 font-semibold">${p.fullname || "-"}</td>
-            <td class="px-8 py-4 text-base">${p.email || "-"}</td>
-            <td class="px-8 py-4 text-base">${p.phone || "-"}</td>
-            <td class="px-8 py-4 text-base">${
+            <td class="px-6 py-3 text-sm text-red-700 font-semibold">${p.fullname || "-"}</td>
+            <td class="px-6 py-3 text-sm">${p.email || "-"}</td>
+            <td class="px-6 py-3 text-sm">${p.phone || "-"}</td>
+            <td class="px-6 py-3 text-sm">${
               p.gender === "female"
                 ? "Perempuan"
                 : p.gender === "male"
                 ? "Laki-laki"
                 : "-"
             }</td>
-            <td class="px-8 py-4 text-base">${p.age || "-"}</td>
-            <td class="px-8 py-4 text-base">${p.bmi || "-"}</td>
-            <td class="px-8 py-4 text-base max-w-xs truncate" title="${
+            <td class="px-6 py-3 text-sm">${p.age || "-"}</td>
+            <td class="px-6 py-3 text-sm">${p.bmi || "-"}</td>
+            <td class="px-6 py-3 text-sm max-w-xs truncate" title="${
               p.medicalHistory || "-"
             }">${p.medicalHistory || "-"}</td>
-            <td class="px-8 py-4 text-base max-w-xs truncate" title="${
+            <td class="px-6 py-3 text-sm max-w-xs truncate" title="${
               p.address || "-"
             }">${p.address || "-"}</td>
-            <td class="px-8 py-4 text-base font-semibold ${
+            <td class="px-6 py-3 text-sm font-semibold ${
               statusAritmia === "Normal" ? "text-green-600" : "text-red-700"
             }">${statusAritmia}</td>
-            <td class="px-8 py-4 text-center space-x-4">
-              <button class="btn-chat-patient bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded-2xl shadow-md transition" data-patient-id="${doc.id}" data-patient-name="${p.fullname}" type="button" aria-label="Chat dengan ${p.fullname}">
+            <td class="px-6 py-3 text-center space-x-2">
+              <button class="btn-chat-patient bg-red-700 hover:bg-red-800 text-white px-3 py-1 rounded-md transition" data-patient-id="${doc.id}" data-patient-name="${p.fullname}" type="button" aria-label="Chat dengan ${p.fullname}">
                 <i class="fas fa-comments"></i> Chat
               </button>
             </td>
@@ -1360,7 +1350,7 @@
           });
         });
       } catch (error) {
-        patientsTableBody.innerHTML = `<tr><td colspan="10" class="text-center py-12 text-red-700 font-semibold text-lg">Gagal memuat data pasien: ${error.message}</td></tr>`;
+        patientsTableBody.innerHTML = `<tr><td colspan="10" class="text-center py-6 text-red-700 font-semibold">Gagal memuat data pasien: ${error.message}</td></tr>`;
       }
     }
 
@@ -1368,7 +1358,7 @@
     async function loadNotifications() {
       if (currentRole !== "doctor") return;
       notificationsList.innerHTML =
-        '<p class="text-gray-500 text-center py-12 text-lg">Memuat notifikasi...</p>';
+        '<p class="text-gray-500 text-center py-6">Memuat notifikasi...</p>';
       try {
         if (notificationsUnsub) notificationsUnsub();
         notificationsUnsub = db
@@ -1379,7 +1369,7 @@
             notificationsList.innerHTML = "";
             if (snapshot.empty) {
               notificationsList.innerHTML =
-                '<p class="text-gray-500 text-center py-12 text-lg">Belum ada notifikasi.</p>';
+                '<p class="text-gray-500 text-center py-6">Belum ada notifikasi.</p>';
               return;
             }
             snapshot.forEach((doc) => {
@@ -1387,9 +1377,9 @@
               const time = notif.timestamp ? formatDateTime(notif.timestamp) : "";
               const isUnread = !notif.read;
               const li = document.createElement("div");
-              li.className = `border-b border-red-200 py-4 px-6 ${
+              li.className = `border-b border-red-200 py-3 px-4 ${
                 isUnread ? "bg-red-100 font-semibold" : "bg-white"
-              } rounded-2xl mb-4 shadow-sm text-lg`;
+              } rounded-md mb-2`;
               let content = "";
               if (notif.type === "aritmia") {
                 content = `Pasien dengan ID <strong>${notif.fromUserId}</strong> mengalami <strong>${notif.category}</strong> dengan BPM ${notif.bpm}.`;
@@ -1398,13 +1388,13 @@
               }
               li.innerHTML = `
                 <p>${content}</p>
-                <p class="text-xs text-gray-500 mt-2">${time}</p>
+                <p class="text-xs text-gray-500 mt-1">${time}</p>
               `;
               notificationsList.appendChild(li);
             });
           });
       } catch (error) {
-        notificationsList.innerHTML = `<p class="text-red-700 text-center py-12 font-semibold text-lg">Gagal memuat notifikasi: ${error.message}</p>`;
+        notificationsList.innerHTML = `<p class="text-red-700 text-center py-6 font-semibold">Gagal memuat notifikasi: ${error.message}</p>`;
       }
     }
 
@@ -1435,13 +1425,13 @@
                 content = "Notifikasi baru.";
               }
               const li = document.createElement("li");
-              li.className = "mb-2 text-lg";
+              li.className = "mb-1";
               li.innerHTML = `${content} <span class="text-xs text-gray-500">(${time})</span>`;
               patientNotificationsList.appendChild(li);
             });
           });
       } catch (error) {
-        patientNotificationsList.innerHTML = `<li class="text-red-700 font-semibold text-lg">Gagal memuat notifikasi: ${error.message}</li>`;
+        patientNotificationsList.innerHTML = `<li class="text-red-700 font-semibold">Gagal memuat notifikasi: ${error.message}</li>`;
       }
     }
 
@@ -1455,34 +1445,27 @@
         } else if (currentRole === "doctor") {
           usersSnapshot = await db.collection("users").where("role", "==", "patient").get();
         } else {
-          chatUserList.innerHTML =
-            '<li class="p-6 text-gray-500 text-lg">Tidak ada pengguna chat.</li>';
+          chatUserList.innerHTML = '<li class="p-4 text-gray-500">Tidak ada pengguna chat.</li>';
           return;
         }
         if (usersSnapshot.empty) {
-          chatUserList.innerHTML =
-            '<li class="p-6 text-gray-500 text-lg">Tidak ada pengguna chat.</li>';
+          chatUserList.innerHTML = '<li class="p-4 text-gray-500">Tidak ada pengguna chat.</li>';
           return;
         }
         usersSnapshot.forEach((doc) => {
           const u = doc.data();
           const li = document.createElement("li");
-          li.className =
-            "p-4 hover:bg-red-100 cursor-pointer flex items-center space-x-4 transition rounded-lg";
+          li.className = "p-3 hover:bg-red-100 cursor-pointer flex items-center space-x-3";
           li.setAttribute("data-user-id", doc.id);
           li.setAttribute("data-user-name", u.fullname);
           li.setAttribute("data-user-role", u.role);
           li.setAttribute("role", "button");
           li.setAttribute("tabindex", "0");
           li.innerHTML = `
-            <img src="${
-              u.profilePhotoURL || "https://placehold.co/48x48/png?text=User"
-            }" alt="Foto profil ${u.fullname}" class="w-14 h-14 rounded-full object-cover border-4 border-red-700 shadow-md" />
+            <img src="${u.profilePhotoURL || "https://placehold.co/48x48/png?text=User"}" alt="Foto profil ${u.fullname}" class="w-12 h-12 rounded-full object-cover border-2 border-red-700" />
             <div>
-              <p class="font-bold text-red-700 text-lg">${u.fullname}</p>
-              <p class="text-base text-gray-600">${
-                u.role === "doctor" ? "Dokter" : "Pasien"
-              }</p>
+              <p class="font-semibold text-red-700">${u.fullname}</p>
+              <p class="text-sm text-gray-600">${u.role === "doctor" ? "Dokter" : "Pasien"}</p>
             </div>
           `;
           li.addEventListener("click", () => {
@@ -1499,7 +1482,7 @@
           chatUserList.appendChild(li);
         });
       } catch (error) {
-        chatUserList.innerHTML = `<li class="p-6 text-red-700 font-semibold text-lg">Gagal memuat daftar chat: ${error.message}</li>`;
+        chatUserList.innerHTML = `<li class="p-4 text-red-700 font-semibold">Gagal memuat daftar chat: ${error.message}</li>`;
       }
     }
 
@@ -1515,8 +1498,7 @@
         const doc = await db.collection("users").doc(userId).get();
         if (doc.exists) {
           const data = doc.data();
-          chatHeaderPhoto.src =
-            data.profilePhotoURL || "https://placehold.co/48x48/png?text=User";
+          chatHeaderPhoto.src = data.profilePhotoURL || "https://placehold.co/48x48/png?text=User";
         }
       } catch {
         chatHeaderPhoto.src = "https://placehold.co/48x48/png?text=User";
@@ -1526,7 +1508,7 @@
       if (chatUnsub) chatUnsub();
 
       chatMessages.innerHTML =
-        '<p class="text-gray-500 text-center mt-12 text-lg">Memuat pesan...</p>';
+        '<p class="text-gray-500 text-center mt-10">Memuat pesan...</p>';
 
       const chatId = generateChatId(currentUser.uid, currentChatUser);
       chatUnsub = db
@@ -1538,17 +1520,17 @@
           chatMessages.innerHTML = "";
           if (snapshot.empty) {
             chatMessages.innerHTML =
-              '<p class="text-gray-500 text-center mt-12 text-lg">Belum ada pesan.</p>';
+              '<p class="text-gray-500 text-center mt-10">Belum ada pesan.</p>';
             return;
           }
           snapshot.forEach((doc) => {
             const msg = doc.data();
             const isMe = msg.senderId === currentUser.uid;
             const msgDiv = document.createElement("div");
-            msgDiv.className = `max-w-xs md:max-w-md px-6 py-4 rounded-2xl break-words shadow-md ${
+            msgDiv.className = `max-w-xs md:max-w-md px-4 py-2 rounded-lg break-words ${
               isMe
                 ? "bg-red-700 text-white self-end"
-                : "bg-white border-2 border-red-300 text-red-700 self-start"
+                : "bg-white border border-red-300 text-red-700 self-start"
             }`;
             msgDiv.textContent = msg.text;
             chatMessages.appendChild(msgDiv);
