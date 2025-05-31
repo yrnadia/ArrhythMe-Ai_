@@ -33,34 +33,36 @@
  </head>
  <body class="min-h-screen flex flex-col bg-white bg-opacity-90 backdrop-blur-sm">
   <!-- Container -->
-  <div class="flex-grow flex flex-col max-w-7xl mx-auto p-4 sm:p-6 md:p-10" id="app" style="background-image: url('Background.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <div class="flex-grow flex flex-col max-w-7xl mx-auto p-4 sm:p-6 md:p-10 relative" id="app">
+   <!-- Background Image -->
+   <img alt="Background image showing a heart monitor and medical theme in red and white colors, softly blurred behind content" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" height="1080" src="Background.jpeg" width="1920"/>
    <!-- Logo and Header -->
-   <header class="flex items-center justify-between mb-8 border-b border-red-300 pb-4" role="banner">
+   <header class="flex flex-col md:flex-row items-center justify-between mb-8 border-b border-red-300 pb-4 relative z-10" role="banner">
     <div class="flex items-center space-x-4">
      <img alt="Logo persegi panjang ArrhythME-AI milik pengguna" class="w-36 h-16 rounded-md shadow-md object-contain" height="160" id="logo" src="LOGO.png" width="360"/>
-     <h1 class="text-3xl font-extrabold text-red-700 select-none">
+     <h1 class="text-3xl font-extrabold text-red-700 select-none tracking-tight">
       ArrhythME-AI
      </h1>
     </div>
-    <nav aria-label="Primary navigation" class="space-x-4 hidden md:flex">
-     <button class="text-red-700 font-semibold hover:text-red-900 transition" id="nav-login-btn" type="button">
+    <nav aria-label="Primary navigation" class="space-x-4 mt-4 md:mt-0 flex justify-center md:justify-end w-full md:w-auto relative z-10">
+     <button class="text-red-700 font-semibold hover:text-red-900 transition rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="nav-login-btn" type="button">
       Login
      </button>
-     <button class="text-red-700 font-semibold hover:text-red-900 transition" id="nav-register-btn" type="button">
+     <button class="text-red-700 font-semibold hover:text-red-900 transition rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="nav-register-btn" type="button">
       Register
      </button>
     </nav>
    </header>
    <!-- Main Content Area -->
-   <main class="flex-grow bg-white bg-opacity-90 rounded-xl shadow-lg p-6 md:p-10 max-w-5xl mx-auto w-full" role="main">
+   <main class="flex-grow bg-white bg-opacity-95 rounded-xl shadow-lg p-6 md:p-10 max-w-5xl mx-auto w-full relative z-10" role="main">
     <!-- AUTH SECTION -->
     <section aria-label="Authentication section" class="max-w-md mx-auto" id="auth-section">
      <!-- Tabs -->
      <div class="flex justify-center mb-6 border-b border-red-300" role="tablist">
-      <button aria-controls="login-form" aria-selected="true" class="px-6 py-2 font-semibold text-red-700 border-b-2 border-red-700 focus:outline-none" id="tab-login" role="tab" tabindex="0" type="button">
+      <button aria-controls="login-form" aria-selected="true" class="px-6 py-2 font-semibold text-red-700 border-b-2 border-red-700 focus:outline-none transition" id="tab-login" role="tab" tabindex="0" type="button">
        Login
       </button>
-      <button aria-controls="register-form" aria-selected="false" class="px-6 py-2 font-semibold text-gray-500 hover:text-red-700 focus:outline-none" id="tab-register" role="tab" tabindex="-1" type="button">
+      <button aria-controls="register-form" aria-selected="false" class="px-6 py-2 font-semibold text-gray-500 hover:text-red-700 focus:outline-none transition" id="tab-register" role="tab" tabindex="-1" type="button">
        Register
       </button>
      </div>
@@ -78,7 +80,7 @@
        </label>
        <input autocomplete="current-password" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm placeholder-gray-400 focus:border-red-600 focus:ring focus:ring-red-300 focus:ring-opacity-50" id="login-password" name="login-password" placeholder="Masukkan password" required="" type="password"/>
       </div>
-      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 rounded-md transition" type="submit">
+      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
        Masuk
       </button>
      </form>
@@ -124,7 +126,7 @@
         </option>
        </select>
       </div>
-      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 rounded-md transition" type="submit">
+      <button class="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
        Daftar
       </button>
      </form>
@@ -132,15 +134,15 @@
     <!-- DASHBOARD SECTION -->
     <section aria-label="Dashboard section" class="hidden max-w-7xl mx-auto flex flex-col" id="dashboard-section">
      <!-- Dashboard Header -->
-     <nav aria-label="Dashboard navigation" class="flex items-center justify-between bg-red-700 text-white rounded-t-xl px-6 py-3 shadow-md" id="dashboard-nav" role="navigation">
-      <div class="flex items-center space-x-4">
+     <nav aria-label="Dashboard navigation" class="flex flex-col md:flex-row items-center justify-between bg-red-700 text-white rounded-t-xl px-6 py-4 shadow-md" id="dashboard-nav" role="navigation">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
        <img alt="Logo persegi panjang ArrhythME-AI milik pengguna" class="w-28 h-12 rounded-md object-contain" height="120" src="LOGO.png" width="280"/>
        <h2 class="text-xl font-bold" id="dashboard-title">
         Dashboard
        </h2>
       </div>
       <div class="flex items-center space-x-4">
-       <button class="flex items-center space-x-2 bg-white text-red-700 font-semibold px-3 py-1 rounded-md hover:bg-red-100 transition" id="dashboard-logout-btn" type="button">
+       <button class="flex items-center space-x-2 bg-white text-red-700 font-semibold px-4 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="dashboard-logout-btn" type="button">
         <i class="fas fa-sign-out-alt">
         </i>
         <span>
@@ -152,9 +154,9 @@
      <!-- Dashboard Content -->
      <div class="bg-white rounded-b-xl shadow-lg p-6 grid grid-cols-1 md:grid-cols-5 gap-6 min-h-[700px]" id="dashboard-content">
       <!-- Sidebar -->
-      <aside aria-label="Dashboard sidebar" class="col-span-1 bg-red-50 rounded-lg p-4 flex flex-col space-y-4" id="dashboard-sidebar">
+      <aside aria-label="Dashboard sidebar" class="col-span-1 bg-red-50 rounded-lg p-4 flex flex-col space-y-4 sticky top-6 max-h-[calc(100vh-4rem)] overflow-y-auto" id="dashboard-sidebar">
        <div class="flex flex-col items-center space-y-3 mb-6">
-        <img alt="Foto profil pengguna" class="w-24 h-24 rounded-full border-4 border-red-700 object-cover" height="96" id="profile-photo" src="https://storage.googleapis.com/a1aa/image/d3f40b0f-ff43-4f76-9d11-41fe69c8c4ae.jpg" width="96"/>
+        <img alt="Foto profil pengguna" class="w-24 h-24 rounded-full border-4 border-red-700 object-cover" height="96" id="profile-photo" src="https://storage.googleapis.com/a1aa/image/53e57507-0ff1-4556-9f8b-8344f6b9e4a3.jpg" width="96"/>
         <h3 class="text-lg font-semibold text-red-700 text-center break-words" id="profile-name">
          Nama Pengguna
         </h3>
@@ -163,48 +165,49 @@
         </p>
        </div>
        <nav aria-label="Dashboard main navigation" class="flex flex-col space-y-3 text-red-700 font-semibold">
-        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition" data-target="dashboard-welcome" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="dashboard-welcome" type="button">
          <i class="fas fa-home fa-lg">
          </i>
          <span>
           Dashboard
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition" data-target="profile-section" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="profile-section" type="button">
          <i class="fas fa-user-circle fa-lg">
          </i>
          <span>
           Profil
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition" data-target="heart-section" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="heart-section" type="button">
          <i class="fas fa-heartbeat fa-lg">
          </i>
          <span>
           Heart Monitor
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition" data-target="chat-section" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="chat-section" type="button">
          <i class="fas fa-comments fa-lg">
          </i>
          <span>
           Live Chat
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition" data-target="education-section" type="button">
-         <i class="fas fa-book-medical fa-lg"></i>
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="education-section" type="button">
+         <i class="fas fa-book-medical fa-lg">
+         </i>
          <span>
           Edukasi
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition hidden" data-target="patients-section" id="sidebar-patients-btn" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition hidden focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="patients-section" id="sidebar-patients-btn" type="button">
          <i class="fas fa-users fa-lg">
          </i>
          <span>
           Pasien
          </span>
         </button>
-        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition hidden" data-target="notifications-section" id="sidebar-notifications-btn" type="button">
+        <button class="dashboard-nav-btn flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-red-100 transition hidden focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" data-target="notifications-section" id="sidebar-notifications-btn" type="button">
          <i class="fas fa-bell fa-lg">
          </i>
          <span>
@@ -217,8 +220,12 @@
       <section class="col-span-4 bg-red-50 rounded-lg p-6 overflow-auto max-h-[700px] flex flex-col" id="dashboard-main">
        <!-- Welcome Dashboard (for patient and doctor) -->
        <section aria-label="Welcome dashboard" class="hidden space-y-6" id="dashboard-welcome">
-        <h3 class="text-3xl font-bold text-red-700 mb-2" id="welcome-title">
-         Selamat datang
+        <h3 class="text-3xl font-bold text-red-700 mb-2 flex items-center space-x-3">
+         <i class="fas fa-smile-beam text-red-700">
+         </i>
+         <span id="welcome-title">
+          Selamat datang
+         </span>
         </h3>
         <p class="text-lg text-gray-700 flex items-center space-x-3">
          <i class="fas fa-heartbeat text-red-700 text-2xl">
@@ -227,13 +234,18 @@
           Ada yang bisa saya bantu?
          </span>
         </p>
-        <div id="patient-notifications" class="hidden bg-white border border-red-300 rounded-md p-4 shadow space-y-3 max-w-md">
+        <div class="hidden bg-white border border-red-300 rounded-md p-4 shadow space-y-3 max-w-md" id="patient-notifications">
          <h4 class="text-xl font-semibold text-red-700 flex items-center space-x-2">
-          <i class="fas fa-bell"></i>
-          <span>Notifikasi</span>
+          <i class="fas fa-bell">
+          </i>
+          <span>
+           Notifikasi
+          </span>
          </h4>
-         <ul id="patient-notifications-list" class="list-disc list-inside text-gray-700 max-h-48 overflow-y-auto" role="list">
-          <li>Belum ada notifikasi.</li>
+         <ul class="list-disc list-inside text-gray-700 max-h-48 overflow-y-auto" id="patient-notifications-list" role="list">
+          <li>
+           Belum ada notifikasi.
+          </li>
          </ul>
         </div>
        </section>
@@ -250,7 +262,7 @@
         <form class="space-y-4 max-w-3xl" id="profile-form" novalidate="">
          <div class="flex flex-col md:flex-row md:space-x-6">
           <div class="flex-shrink-0 mb-4 md:mb-0">
-           <img alt="Foto profil pengguna" class="w-32 h-32 rounded-full border-4 border-red-700 object-cover" height="128" id="profile-photo-form" src="https://storage.googleapis.com/a1aa/image/d3f40b0f-ff43-4f76-9d11-41fe69c8c4ae.jpg" width="128"/>
+           <img alt="Foto profil pengguna" class="w-32 h-32 rounded-full border-4 border-red-700 object-cover" height="128" id="profile-photo-form" src="https://storage.googleapis.com/a1aa/image/53e57507-0ff1-4556-9f8b-8344f6b9e4a3.jpg" width="128"/>
           </div>
           <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-6">
            <div>
@@ -322,7 +334,7 @@
           </div>
          </div>
          <div class="flex justify-end">
-          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition" type="submit">
+          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
            Simpan Profil
           </button>
          </div>
@@ -331,7 +343,7 @@
         <form class="space-y-4 max-w-3xl hidden" id="profile-form-doctor" novalidate="">
          <div class="flex flex-col md:flex-row md:space-x-6">
           <div class="flex-shrink-0 mb-4 md:mb-0">
-           <img alt="Foto profil dokter" class="w-32 h-32 rounded-full border-4 border-red-700 object-cover" height="128" id="profile-photo-form-doctor" src="https://storage.googleapis.com/a1aa/image/370a4b63-6026-49df-aeac-f785dd9e9bb4.jpg" width="128"/>
+           <img alt="Foto profil dokter" class="w-32 h-32 rounded-full border-4 border-red-700 object-cover" height="128" id="profile-photo-form-doctor" src="https://storage.googleapis.com/a1aa/image/f754cb9e-a8c0-471d-3579-dd846000b6ce.jpg" width="128"/>
           </div>
           <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-6">
            <div>
@@ -367,7 +379,7 @@
           </div>
          </div>
          <div class="flex justify-end">
-          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition" type="submit">
+          <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
            Simpan Profil
           </button>
          </div>
@@ -388,9 +400,10 @@
           <span class="font-semibold">
            Mulai
           </span>
-          untuk memulai pengambilan sinyal ECG selama 30 detik.
+          untuk memulai
+                  pengambilan sinyal ECG selama 30 detik.
          </p>
-         <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition flex items-center space-x-2 self-start" id="start-ecg-btn" type="button">
+         <button class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-md transition flex items-center space-x-2 self-start focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" id="start-ecg-btn" type="button">
           <i class="fas fa-play">
           </i>
           <span>
@@ -449,7 +462,7 @@
         <div class="flex flex-col md:flex-row h-[500px] bg-white rounded-lg shadow border border-red-300 overflow-hidden">
          <!-- User List -->
          <aside aria-label="Daftar pengguna chat" class="w-full md:w-1/3 border-r border-red-300 overflow-y-auto" id="chat-user-list">
-          <div class="p-4 border-b border-red-300 bg-red-50 font-semibold text-red-700">
+          <div class="p-4 border-b border-red-300 bg-red-50 font-semibold text-red-700 sticky top-0 z-10">
            Daftar Chat
           </div>
           <ul class="divide-y divide-red-200" id="chat-users" role="list">
@@ -459,7 +472,7 @@
          <section aria-label="Jendela chat" class="flex flex-col w-full md:w-2/3" hidden="" id="chat-window">
           <header class="flex items-center justify-between bg-red-700 text-white p-4" id="chat-header">
            <div class="flex items-center space-x-3">
-            <img alt="Foto profil lawan chat" class="w-12 h-12 rounded-full object-cover border-2 border-white" height="48" id="chat-header-photo" src="https://storage.googleapis.com/a1aa/image/f43711ba-65ed-4443-3d46-8dd36289b122.jpg" width="48"/>
+            <img alt="Foto profil lawan chat" class="w-12 h-12 rounded-full object-cover border-2 border-white" height="48" id="chat-header-photo" src="https://storage.googleapis.com/a1aa/image/34625384-ac09-4662-e1e1-34e94c5e509b.jpg" width="48"/>
             <div>
              <h4 class="font-semibold text-lg" id="chat-header-name">
               Nama Lawan Chat
@@ -478,7 +491,7 @@
           </div>
           <form aria-label="Form kirim pesan" autocomplete="off" class="flex border-t border-red-300 p-3 bg-white" id="chat-form" novalidate="">
            <input aria-required="true" class="flex-grow rounded-l-md border border-red-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" id="chat-input" placeholder="Ketik pesan..." required="" type="text"/>
-           <button aria-label="Kirim pesan" class="bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-r-md transition" type="submit">
+           <button aria-label="Kirim pesan" class="bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-r-md transition focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="submit">
             <i class="fas fa-paper-plane">
             </i>
            </button>
@@ -562,55 +575,67 @@
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
          <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
-          <img alt="Ilustrasi anatomi jantung manusia dengan warna merah dan putih" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/f2b21616-5504-40ed-69b9-5445e7c8ee04.jpg" width="400"/>
+          <img alt="Ilustrasi anatomi jantung manusia dengan warna merah dan putih" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/9c48ea7d-564d-4d5b-8d9f-c21e0475f714.jpg" width="400"/>
           <h4 class="text-lg font-semibold text-red-700 mb-1">
            Anatomi Jantung
           </h4>
           <p class="text-gray-700 text-sm mb-2">
            Pelajari struktur dan fungsi jantung manusia secara mendalam.
           </p>
-          <a href="https://www.heart.org/en/health-topics/heart-attack/about-heart-attacks/anatomy-of-the-heart" target="_blank" rel="noopener noreferrer" class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1">
-           <span>Baca Selengkapnya</span>
-           <i class="fas fa-external-link-alt text-sm"></i>
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/health-topics/heart-attack/about-heart-attacks/anatomy-of-the-heart" rel="noopener noreferrer" target="_blank">
+           <span>
+            Baca Selengkapnya
+           </span>
+           <i class="fas fa-external-link-alt text-sm">
+           </i>
           </a>
          </article>
          <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
-          <img alt="Ilustrasi gelombang ECG dengan tanda aritmia berwarna merah" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/bcc24551-f469-463f-78f6-b619177b1800.jpg" width="400"/>
+          <img alt="Ilustrasi gelombang ECG dengan tanda aritmia berwarna merah" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/fca2d1ca-ea8a-4861-a744-be7eb1e121ab.jpg" width="400"/>
           <h4 class="text-lg font-semibold text-red-700 mb-1">
            Mengenal Aritmia
           </h4>
           <p class="text-gray-700 text-sm mb-2">
            Informasi tentang jenis-jenis aritmia dan dampaknya pada kesehatan.
           </p>
-          <a href="https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia" target="_blank" rel="noopener noreferrer" class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1">
-           <span>Baca Selengkapnya</span>
-           <i class="fas fa-external-link-alt text-sm"></i>
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia" rel="noopener noreferrer" target="_blank">
+           <span>
+            Baca Selengkapnya
+           </span>
+           <i class="fas fa-external-link-alt text-sm">
+           </i>
           </a>
          </article>
          <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
-          <img alt="Ilustrasi makanan sehat berwarna merah dan putih di atas meja kayu" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/b8380a0c-09d6-49c7-740c-cab9c4168c3a.jpg" width="400"/>
+          <img alt="Ilustrasi makanan sehat berwarna merah dan putih di atas meja kayu" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/7f3ec17f-c0f9-4fa0-5d15-163372ce022f.jpg" width="400"/>
           <h4 class="text-lg font-semibold text-red-700 mb-1">
            Pola Makan Sehat
           </h4>
           <p class="text-gray-700 text-sm mb-2">
            Tips dan panduan pola makan yang baik untuk kesehatan jantung.
           </p>
-          <a href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/healthy-eating-for-a-healthy-heart" target="_blank" rel="noopener noreferrer" class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1">
-           <span>Baca Selengkapnya</span>
-           <i class="fas fa-external-link-alt text-sm"></i>
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/healthy-eating-for-a-healthy-heart" rel="noopener noreferrer" target="_blank">
+           <span>
+            Baca Selengkapnya
+           </span>
+           <i class="fas fa-external-link-alt text-sm">
+           </i>
           </a>
          </article>
          <article class="bg-white rounded-lg shadow p-4 border border-red-300 hover:shadow-lg transition cursor-pointer">
-          <img alt="Ilustrasi orang berolahraga dan gaya hidup sehat dengan latar belakang merah putih" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/2d0e9a98-92b1-4da4-3670-e9c4b73bd49a.jpg" width="400"/>
+          <img alt="Ilustrasi orang berolahraga dan gaya hidup sehat dengan latar belakang merah putih" class="rounded-md mb-3 object-cover w-full h-40" height="200" src="https://storage.googleapis.com/a1aa/image/05749a1c-16b1-434f-cac0-d03006f92604.jpg" width="400"/>
           <h4 class="text-lg font-semibold text-red-700 mb-1">
            Gaya Hidup Sehat
           </h4>
           <p class="text-gray-700 text-sm mb-2">
            Cara menjaga pola hidup sehat untuk mencegah penyakit jantung.
           </p>
-          <a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/physical-activity-improves-quality-of-life" target="_blank" rel="noopener noreferrer" class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1">
-           <span>Baca Selengkapnya</span>
-           <i class="fas fa-external-link-alt text-sm"></i>
+          <a class="text-red-700 font-semibold hover:underline inline-flex items-center space-x-1" href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/physical-activity-improves-quality-of-life" rel="noopener noreferrer" target="_blank">
+           <span>
+            Baca Selengkapnya
+           </span>
+           <i class="fas fa-external-link-alt text-sm">
+           </i>
           </a>
          </article>
         </div>
@@ -1175,7 +1200,8 @@
     // Start ECG monitoring
     startEcgBtn.addEventListener("click", async () => {
       startEcgBtn.disabled = true;
-      startEcgBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengambil data...';
+      startEcgBtn.innerHTML =
+        '<i class="fas fa-spinner fa-spin"></i> Mengambil data...';
       try {
         const bpm = await fetchECGData();
         const category = categorizeBPM(bpm);
@@ -1221,7 +1247,10 @@
     // Notify doctor about aritmia detected for a patient
     async function notifyDoctorOfAritmia(patientId, bpm, category) {
       // Find doctors monitoring this patient (for demo, notify all doctors)
-      const doctorsSnapshot = await db.collection("users").where("role", "==", "doctor").get();
+      const doctorsSnapshot = await db
+        .collection("users")
+        .where("role", "==", "doctor")
+        .get();
       const notifications = [];
       doctorsSnapshot.forEach((doc) => {
         notifications.push(
@@ -1261,7 +1290,10 @@
       patientsTableBody.innerHTML =
         '<tr><td colspan="10" class="text-center py-6 text-gray-500">Memuat data pasien...</td></tr>';
       try {
-        const patientsSnapshot = await db.collection("users").where("role", "==", "patient").get();
+        const patientsSnapshot = await db
+          .collection("users")
+          .where("role", "==", "patient")
+          .get();
         if (patientsSnapshot.empty) {
           patientsTableBody.innerHTML =
             '<tr><td colspan="10" class="text-center py-6 text-gray-500">Belum ada pasien terdaftar.</td></tr>';
@@ -1271,7 +1303,9 @@
         patientsSnapshot.forEach((doc) => {
           const p = doc.data();
           const lastEcg =
-            p.ecgHistory && p.ecgHistory.length ? p.ecgHistory[p.ecgHistory.length - 1] : null;
+            p.ecgHistory && p.ecgHistory.length
+              ? p.ecgHistory[p.ecgHistory.length - 1]
+              : null;
           const statusAritmia = lastEcg ? lastEcg.category : "-";
           const tr = document.createElement("tr");
           tr.className = "hover:bg-red-50 cursor-pointer";
@@ -1288,12 +1322,12 @@
             }</td>
             <td class="px-6 py-3 text-sm">${p.age || "-"}</td>
             <td class="px-6 py-3 text-sm">${p.bmi || "-"}</td>
-            <td class="px-6 py-3 text-sm max-w-xs truncate" title="${p.medicalHistory || "-"}">${
-            p.medicalHistory || "-"
-          }</td>
-            <td class="px-6 py-3 text-sm max-w-xs truncate" title="${p.address || "-"}">${
-            p.address || "-"
-          }</td>
+            <td class="px-6 py-3 text-sm max-w-xs truncate" title="${
+              p.medicalHistory || "-"
+            }">${p.medicalHistory || "-"}</td>
+            <td class="px-6 py-3 text-sm max-w-xs truncate" title="${
+              p.address || "-"
+            }">${p.address || "-"}</td>
             <td class="px-6 py-3 text-sm font-semibold ${
               statusAritmia === "Normal" ? "text-green-600" : "text-red-700"
             }">${statusAritmia}</td>
