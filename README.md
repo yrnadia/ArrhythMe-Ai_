@@ -960,6 +960,7 @@
   </script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js">
   </script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
   <script>
    // Firebase config and initialization
     const firebaseConfig = {
@@ -970,11 +971,13 @@
       messagingSenderId: "804886218291",
       appId: "1:804886218291:web:6797922c00ce21745a4546",
       measurementId: "G-L7YPR09ERN",
+      databaseURL: "https://final-cd-5741c-default-rtdb.firebaseio.com"
     };
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
     const storage = firebase.storage();
+    const rtdb = firebase.database();
 
     // DOM Elements
     const authSection = document.getElementById('auth-section');
@@ -1079,6 +1082,7 @@
     let currentChatUser = null; // userId of chat partner
     let chatUnsub = null;
     let notificationsUnsub = null;
+    let ecgRtdbListener = null;
 
     // Utility Functions
     function showSection(section) {
@@ -1455,34 +1459,85 @@
       if (currentRole !== 'patient') return;
       startEcgBtn.disabled = true;
       startEcgBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengambil data...';
+
+      // Remove previous listener if any
+      if (ecgRtdbListener) {
+        ecgRtdbListener.off();
+        ecgRtdbListener = null;
+      }
+
       try {
-        // Simulate ECG data fetching
-        const bpm = Math.floor(Math.random() * 70) + 50;
-        const category = categorizeBPM(bpm);
-        bpmValue.textContent = bpm;
-        bpmCategory.textContent = category;
-        ecgResult.classList.remove('hidden');
+        // Listen to realtime database path for this user's ECG data
+        const ecgPath = `data_ecg/${currentUser.uid}`;
+        ecgResult.classList.add('hidden');
+        bpmValue.textContent = '--';
+        bpmCategory.textContent = '--';
+        ecgHistoryList.innerHTML = '<li class="text-gray-500 text-sm sm:text-base font-semibold">Menunggu data ECG...</li>';
 
-        const newEcgEntry = {
-          bpm,
-          category,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        };
+        // Set a timeout to stop listening after 30 seconds
+        const timeoutId = setTimeout(() => {
+          if (ecgRtdbListener) {
+            ecgRtdbListener.off();
+            ecgRtdbListener = null;
+          }
+          startEcgBtn.disabled = false;
+          startEcgBtn.innerHTML = '<i class="fas fa-star"></i> Start';
+          alert('Pengambilan data ECG selesai.');
+        }, 30000);
 
-        await db.collection('users').doc(currentUser.uid).update({
-          ecgHistory: firebase.firestore.FieldValue.arrayUnion(newEcgEntry),
+        ecgRtdbListener = rtdb.ref(ecgPath);
+        ecgRtdbListener.on('value', async (snapshot) => {
+          const data = snapshot.val();
+          if (!data) return;
+
+          // Assume data is an array or object of ECG entries with bpm, category, timestamp
+          // We'll convert to array if object
+          let ecgEntries = [];
+          if (Array.isArray(data)) {
+            ecgEntries = data;
+          } else if (typeof data === 'object') {
+            ecgEntries = Object.values(data);
+          }
+
+          if (ecgEntries.length === 0) return;
+
+          // Take the last entry as current
+          const lastEntry = ecgEntries[ecgEntries.length - 1];
+          const bpm = lastEntry.bpm || 0;
+          // Categorize bpm here to ensure correct category display
+          const category = categorizeBPM(bpm);
+
+          bpmValue.textContent = bpm;
+          bpmCategory.textContent = category;
+          ecgResult.classList.remove('hidden');
+
+          // Render history from realtime database data
+          renderECGHistory(ecgEntries);
+
+          // Save latest ECG entry to Firestore ecgHistory array
+          const newEcgEntry = {
+            bpm,
+            category,
+            timestamp: lastEntry.timestamp ? new Date(lastEntry.timestamp) : new Date(),
+          };
+
+          // Update Firestore ecgHistory array with new entry if not duplicate
+          const existingHistory = currentUserData.ecgHistory || [];
+          const lastFirestoreEntry = existingHistory.length ? existingHistory[existingHistory.length - 1] : null;
+          if (!lastFirestoreEntry || lastFirestoreEntry.timestamp.toDate().getTime() !== newEcgEntry.timestamp.getTime()) {
+            await db.collection('users').doc(currentUser.uid).update({
+              ecgHistory: firebase.firestore.FieldValue.arrayUnion(newEcgEntry),
+            });
+            // Update local data
+            currentUserData.ecgHistory = [...existingHistory, newEcgEntry];
+          }
+
+          if (category === 'Takikardia' || category === 'Bradikardia') {
+            notifyDoctorOfAritmia(currentUser.uid, bpm, category);
+          }
         });
-
-        const doc = await db.collection('users').doc(currentUser.uid).get();
-        currentUserData = doc.data();
-        renderECGHistory(currentUserData.ecgHistory || []);
-
-        if (category === 'Takikardia' || category === 'Bradikardia') {
-          notifyDoctorOfAritmia(currentUser.uid, bpm, category);
-        }
       } catch (error) {
         alert('Gagal mengambil data ECG: ' + error.message);
-      } finally {
         startEcgBtn.disabled = false;
         startEcgBtn.innerHTML = '<i class="fas fa-star"></i> Start';
       }
@@ -1497,11 +1552,12 @@
       history.slice().reverse().forEach(item => {
         const li = document.createElement('li');
         li.className = 'border border-red-300 rounded-xl p-2 sm:p-3 bg-white flex justify-between items-center shadow-sm';
+        const ts = item.timestamp instanceof Date ? item.timestamp : (item.timestamp && item.timestamp.toDate ? item.timestamp.toDate() : new Date(item.timestamp));
         li.innerHTML = `
           <div>
             <p class="font-semibold text-red-700 text-base sm:text-lg">BPM: ${item.bpm}</p>
             <p class="text-sm sm:text-base text-gray-600">Kategori: ${item.category}</p>
-            <p class="text-xs sm:text-sm text-gray-500">${formatDateTime(item.timestamp)}</p>
+            <p class="text-xs sm:text-sm text-gray-500">${ts.toLocaleString('id-ID', {year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'})}</p>
           </div>
         `;
         ecgHistoryList.appendChild(li);
